@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.node-version
+.idea/*.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.python-version
+dist
+package-lock.json
+yarn.lock
