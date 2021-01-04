@@ -28,15 +28,16 @@ import WMTSCapabilities from 'ol/format/WMTSCapabilities';
 let parser = new WMTSCapabilities();
 var map;
 
-fetch('http://localhost/WeServer/wmts?Service=WMTS&Request=GetCapabilities')
+const wmtsUrl = '/geoserver/gwc/service/wmts?Service=WMTS&Request=GetCapabilities';
+fetch(wmtsUrl)
     .then(function (response) {
         return response.text();
     })
     .then(function (text) {
         var result = parser.read(text);
         var options = optionsFromCapabilities(result, {
-            layer: 'acimage',
-            matrixSet: 'mercator',
+            layer: 'GIS:ne_10m_land',
+            matrixSet: 'EPSG:900913',
             maxZoom: 9,
         });
 
